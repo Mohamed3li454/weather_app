@@ -23,7 +23,7 @@ class _particle_animationState extends State<particle_animation> {
         elevation: 0,
         title: const Center(
           child: Text(
-            "Wither App",
+            " App",
             style: TextStyle(
                 color: Colors.black, fontSize: 30, fontStyle: FontStyle.italic),
           ),
@@ -37,57 +37,47 @@ class _particle_animationState extends State<particle_animation> {
           const SizedBox(
             height: 100,
           ),
-          Padding(
-            padding: const EdgeInsets.all(70),
-            child: Center(
-              child: AnimatedTextKit(
-                animatedTexts: [
-                  TypewriterAnimatedText(
-                    "There's no Action 😔",
-                    speed: const Duration(milliseconds: 90),
-                    textStyle: const TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Center(
+                child: AnimatedTextKit(
+                  animatedTexts: [
+                    TypewriterAnimatedText(
+                      "There's no Action 😔",
+                      speed: const Duration(milliseconds: 90),
+                      textStyle: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  TypewriterAnimatedText(
-                    'Start searching now 🔍',
-                    speed: const Duration(milliseconds: 70),
-                    textStyle: const TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                ],
-                isRepeatingAnimation: true,
-                repeatForever: true,
-                displayFullTextOnTap: true,
-                stopPauseOnTap: false,
+                    TypewriterAnimatedText(
+                      'Start searching now 🔍',
+                      speed: const Duration(milliseconds: 70),
+                      textStyle: const TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                  isRepeatingAnimation: true,
+                  repeatForever: true,
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: false,
+                ),
               ),
             ),
           ),
-          const SizedBox(height: 60),
-          Center(
-            child: AnimatedButton(
-              // ignore: sort_child_properties_last
-              child: const Text(
-                'Searching 🔍',
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
+          const SizedBox(height: 50),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)),
                 ),
               ),
-              color: Colors.blue,
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) {
-                    return const searching_view();
-                  },
-                ));
-              },
-              enabled: true,
-              shadowDegree: ShadowDegree.light,
             ),
           ),
         ],
