@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:animated_button/animated_button.dart';
-// ignore: unnecessary_import
-import 'package:flutter/cupertino.dart';
-import 'package:wither_app/views/searching_view.dart';
+// import 'package:animated_button/animated_button.dart';
+// import 'package:wither_app/views/searching_view.dart';
 
 // ignore: camel_case_types
 class particle_animation extends StatefulWidget {
@@ -71,11 +69,17 @@ class _particle_animationState extends State<particle_animation> {
           const SizedBox(height: 50),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: TextField(
+                onSubmitted: (value) {},
+                onChanged: (value) {},
                 decoration: InputDecoration(
+                  label: const Text("Search"),
+                  suffixIcon: const Icon(Icons.search),
+                  hintText: "Enter City Name",
                   border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                 ),
               ),
             ),
