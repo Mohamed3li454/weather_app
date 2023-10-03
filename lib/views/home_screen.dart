@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:wither_app/Animations/particles_animation.dart';
+import 'package:wither_app/views/Searching_page.dart';
+import 'package:wither_app/views/weathre_view.dart';
 
 // ignore: camel_case_types
 class Home_screen extends StatelessWidget {
@@ -8,7 +9,7 @@ class Home_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: particle_animation(),
+      body: weather_view(),
     );
   }
 }

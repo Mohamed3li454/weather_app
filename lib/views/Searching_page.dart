@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:wither_app/Animations/custom_cliper.dart';
 // import 'package:animated_button/animated_button.dart';
 // import 'package:wither_app/views/searching_view.dart';
 
 // ignore: camel_case_types
-class particle_animation extends StatefulWidget {
-  const particle_animation({super.key});
+class searching_page extends StatefulWidget {
+  const searching_page({super.key});
 
   @override
-  State<particle_animation> createState() => _particle_animationState();
+  State<searching_page> createState() => _searching_pageState();
 }
 
 // ignore: camel_case_types
-class _particle_animationState extends State<particle_animation> {
+class _searching_pageState extends State<searching_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         elevation: 0,
         title: const Center(
           child: Text(
-            " App",
+            "Weather App",
             style: TextStyle(
-                color: Colors.black, fontSize: 30, fontStyle: FontStyle.italic),
+                color: Colors.white, fontSize: 30, fontStyle: FontStyle.italic),
           ),
         ),
       ),
@@ -32,8 +33,9 @@ class _particle_animationState extends State<particle_animation> {
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
+          const custom_cliper(),
           const SizedBox(
-            height: 100,
+            height: 1,
           ),
           Expanded(
             child: Padding(
