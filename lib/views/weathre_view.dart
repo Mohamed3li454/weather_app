@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:wither_app/Animations/custom_cliper.dart';
+import 'package:wither_app/models/weather_model.dart';
+import 'package:wither_app/widgets/searching_widget.dart';
 
 // ignore: camel_case_types
 class weather_view extends StatelessWidget {
+  final num tempdef = 15;
   const weather_view({super.key});
 
   @override
@@ -23,18 +26,18 @@ class weather_view extends StatelessWidget {
         children: [
           const custom_cliper(),
           const SizedBox(height: 100),
-          const Column(
+          Column(
             children: [
               Text(
-                "Cairo",
-                style: TextStyle(
+                weathermodel!.cityname ?? "gg",
+                style: const TextStyle(
                     fontSize: 50,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                "updated at 32:20",
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                weathermodel!.date ?? "no",
+                style: const TextStyle(fontSize: 25, color: Colors.black),
               )
             ],
           ),
@@ -45,7 +48,7 @@ class weather_view extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Image.asset("assets/images/clear.png"),
-                const Text(
+                Text(
                   "17",
                   style: TextStyle(
                       fontSize: 30,

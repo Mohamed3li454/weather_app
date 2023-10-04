@@ -1,9 +1,9 @@
 // ignore: camel_case_types
 class weather_model {
   final String cityname;
-  final String date;
-  final num temp;
-  final String? image;
+  final String? date;
+  final num? temp;
+  final String image;
   final double maxtemp;
   final double mintemp;
   final String weathercontion;

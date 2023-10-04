@@ -8,7 +8,7 @@ class Weather_service {
   final Dio dio;
   Weather_service({required this.dio});
   // ignore: non_constant_identifier_names
-  Future<weather_model> weather_service({required String cityname}) async {
+  Future<weather_model> get_weather({required String cityname}) async {
     try {
       Response response = await dio.get(
           "http://api.weatherapi.com/v1/forecast.json?key=1d1b639e3f95419784092503230310&q=$cityname&days=10&aqi=no&alerts=no");

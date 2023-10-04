@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:wither_app/Animations/custom_cliper.dart';
+import 'package:wither_app/models/weather_model.dart';
+import 'package:wither_app/widgets/searching_widget.dart';
 // import 'package:animated_button/animated_button.dart';
 // import 'package:wither_app/views/searching_view.dart';
 
@@ -14,6 +16,7 @@ class searching_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _searching_pageState extends State<searching_page> {
+  weather_model? weathermodel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,23 +72,7 @@ class _searching_pageState extends State<searching_page> {
             ),
           ),
           const SizedBox(height: 50),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: TextField(
-                onSubmitted: (value) {},
-                onChanged: (value) {},
-                decoration: InputDecoration(
-                  label: const Text("Search"),
-                  suffixIcon: const Icon(Icons.search),
-                  hintText: "Enter City Name",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          searching_widget(),
         ],
       ),
     );
