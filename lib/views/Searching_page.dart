@@ -72,7 +72,7 @@ class _searching_pageState extends State<searching_page> {
             ),
           ),
           const SizedBox(height: 50),
-          searching_widget(),
+          const searching_widget(),
         ],
       ),
     );

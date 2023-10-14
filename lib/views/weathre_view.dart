@@ -29,14 +29,14 @@ class weather_view extends StatelessWidget {
           Column(
             children: [
               Text(
-                weathermodel!.cityname ?? "gg",
+                 "gg",
                 style: const TextStyle(
                     fontSize: 50,
                     color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
               Text(
-                weathermodel!.date ?? "no",
+                "no",
                 style: const TextStyle(fontSize: 25, color: Colors.black),
               )
             ],

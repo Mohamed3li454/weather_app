@@ -15,8 +15,6 @@ class searching_widget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: TextField(
           onSubmitted: (value) async {
-            weathermodel =
-                await Weather_service(dio: Dio()).get_weather(cityname: value);
             // ignore: use_build_context_synchronously
             Navigator.push(context, MaterialPageRoute(
               builder: (context) {
@@ -38,4 +36,3 @@ class searching_widget extends StatelessWidget {
   }
 }
 
-weather_model? weathermodel;

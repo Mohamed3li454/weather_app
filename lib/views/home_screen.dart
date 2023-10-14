@@ -10,7 +10,7 @@ class Home_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: weathermodel == null ? searching_page() : weather_view(),
+      body: searching_page() ,
     );
   }
 }
