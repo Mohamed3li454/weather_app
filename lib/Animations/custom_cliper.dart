@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
 class custom_cliper extends StatelessWidget {
-  const custom_cliper({super.key});
-
+  const custom_cliper({super.key, required this.color});
+final Color color;
   @override
   Widget build(BuildContext context) {
+
     // ignore: avoid_unnecessary_containers
     return Container(
       child: Stack(
@@ -14,7 +15,7 @@ class custom_cliper extends StatelessWidget {
             opacity: 1,
             child: ClipPath(
               clipper: BottomWaveClipper(),
-              child: Container(color: Colors.black, height: 120),
+              child: Container(color: color, height: 120),
             ),
           ),
         ],

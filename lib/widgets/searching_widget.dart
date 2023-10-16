@@ -1,13 +1,17 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:wither_app/models/weather_model.dart';
-import 'package:wither_app/services/weather_service.dart';
-import 'package:wither_app/views/weathre_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wither_app/cubit/get_weather_cubit/get_weather_cubir.dart';
 
 // ignore: camel_case_types
-class searching_widget extends StatelessWidget {
-  const searching_widget({super.key});
+class searching_widget extends StatefulWidget {
+  const searching_widget({super.key,});
+  @override
+  State<searching_widget> createState() => _searching_widgetState();
+}
 
+// ignore: camel_case_types
+class _searching_widgetState extends State<searching_widget> {
+    
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -15,12 +19,8 @@ class searching_widget extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: TextField(
           onSubmitted: (value) async {
-            // ignore: use_build_context_synchronously
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const weather_view();
-              },
-            ));
+         var getweathercubit = BlocProvider.of<get_weather_cubit>(context);
+         getweathercubit.get_weather(cityname: value);
           },
           decoration: InputDecoration(
             label: const Text("Search"),
@@ -34,5 +34,9 @@ class searching_widget extends StatelessWidget {
       ),
     );
   }
+  
+
+ 
+
 }
 
